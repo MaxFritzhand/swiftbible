@@ -3,5 +3,76 @@
   [nodes]="nodes"
   [draggingEnabled]="false"
   [autoZoom]="true"
+  [layout]="'dagre'"
+
 >
+<!-- <ng-template #nodeTemplate let-node>
+  <svg:g>
+    <svg:rect
+      [attr.width]="node.width"
+      [attr.height]="node.height"
+      [attr.fill]="node.options.color"
+      [attr.stroke]="node.options.stroke"
+      [attr.stroke-width]="node.options.strokeWidth"
+    ></svg:rect>
+    <svg:text
+      class="node-label"
+      [attr.x]="node.width / 2"
+      [attr.y]="node.height / 2"
+      alignment-baseline="central"
+      text-anchor="middle"
+    >
+      {{ node.label }}
+    </svg:text>
+  </svg:g>
+</ng-template> -->
 </ngx-graph>
+<!-- <app-node-details
+  *ngIf="selectedNode && isSlideOutVisible"
+  [node]="selectedNode"
+  (close)="onCloseSlideOut()"
+></app-node-details> -->
+
+
+<!-- updated versonm 
+<ngx-graph
+  class="chart-container"
+  [view]="[800,600]"
+  [nodes]="nodes"
+  [links]="links"
+  [edgeCurvature]="0.5"
+  [layout]="'dagre'"
+  [orientation]="'LR'"
+  [nodeWidth]="150"
+  [nodeHeight]="100"
+  [enableZoom]="true"
+  (nodeClick)="onSelectNode($event.target)"
+>
+  <ng-template #nodeTemplate let-node>
+    <svg:rect
+      [attr.width]="node.width"
+      [attr.height]="node.height"
+      [attr.fill]="node.options.color"
+      rx="5"
+      ry="5"
+      class="node"
+    ></svg:rect>
+    <svg:text
+      class="node-label"
+      [attr.x]="node.width / 2"
+      [attr.y]="node.height / 2"
+      alignment-baseline="middle"
+      text-anchor="middle"
+    >
+      {{ node.label }}
+    </svg:text>
+  </ng-template>
+</ngx-graph>
+
+<app-slide-out-panel
+  [isOpen]="selectedNode !== undefined && isSlideOutVisible"
+  [title]="selectedNode?.label"
+  (close)="onCloseSlideOut()"
+>
+  <app-node-details [node]="selectedNode"></app-node-details>
+</app-slide-out-panel> -->
